@@ -14,7 +14,7 @@ Please direct any questions to <txz@stanford.edu>
 
 In a Python environment of your choice:
 - Clone and install the `suprtools` repository, which contains much general analysis code.
-- Decompress `data.zip` (the raw data) from <INSERT DOI> into a `data` directory at the same level as this README.
+- Decompress `data.zip` (the raw data) from Zenodo [10.5281/zenodo.16907261] into a `data` directory at the same level as this README.
 - Run the entire notebook entitled `analysis.ipynb`.
     - If you have no local LaTeX installation, change the following line in the notebook before runnning
       so that matplotlib does not try to use LaTeX for rendering figure text:
