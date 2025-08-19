@@ -1,10 +1,10 @@
-# Raw data and analysis for _Optically accessible high-finesse millimeter-wave resonator for cavity quantum electrodynamics with atom arrays_
+# Analysis software for _Optically accessible high-finesse millimeter-wave resonator for cavity quantum electrodynamics with atom arrays_
 
-This repository contains raw data and analysis code for the paper entitled
+This repository contains analysis code for the paper entitled
 _Optically accessible high-finesse millimeter-wave resonator for cavity quantum electrodynamics with atom arrays_
 ([arXiv:2506.05804](https://arxiv.org/abs/2506.05804)).
 The code herein generates all the figures shown in the main text and supplementary material,
-and additionally shows how to analyze the raw data here.
+and additionally shows how to analyze the raw data.
 We have tested this software with Python 3.12.
 
 Please direct any questions to <txz@stanford.edu>
