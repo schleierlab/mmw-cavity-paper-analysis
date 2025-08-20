@@ -16,6 +16,9 @@ from matplotlib.figure import Figure
 from matplotlib.patches import ConnectionPatch
 from matplotlib.transforms import Affine2DBase, ScaledTranslation
 from numpy.typing import NDArray
+from tqdm import tqdm
+from uncertainties import unumpy as unp
+
 from suprtools.fp_theory.coupling_config import CouplingConfig
 from suprtools.fp_theory.geometry import SymmetricCavityGeometry
 from suprtools.fp_theory.geometry.anticrossing import AnticrossingFit
@@ -23,8 +26,6 @@ from suprtools.plotting import expand_range
 from suprtools.plotting.units import Units
 from suprtools.rf import WideScanNetwork
 from suprtools.typing import ErrorbarKwargs, PlotKwargs
-from tqdm import tqdm
-from uncertainties import unumpy as unp
 
 from . import style
 
@@ -603,7 +604,10 @@ def make_parax_shifts_column(
     """
     axs_all = np.asarray(axs_all)
     axs_all[-1].set_xlabel(f"Frequency ({Units.GHZ.mplstr()})")
-    axs_all[1].remove()
+
+    # don't use Axes.remove() -- this causes an unclear bug in figure rendering for some installs
+    axs_all[1].set_visible(False)
+
     axs = axs_all[2:]
 
     center_freq_ghz = (start_freq_ghz + stop_freq_ghz) / 2
