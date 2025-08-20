@@ -10,12 +10,31 @@ We have tested this software with Python 3.12.
 Please direct any questions to <txz@stanford.edu>
 
 
+## Project status
+
+Maintenance only.
+
+
 ## Quickstart
 
-In a Python environment of your choice:
-- Clone and install the `suprtools` repository, which contains general analysis code.
-- Decompress `data.zip` (the raw data) from Zenodo [10.5281/zenodo.16907261] into a `data` directory at the same level as this README.
-- Run the entire notebook entitled `analysis.ipynb`.
+- Decide on a working environment. Choose from one of the following:
+    1. Use some base python environment (highly discouraged)
+    2. Create your own environment
+    3. For maximum reproducibility.
+        - Install `conda` (miniconda is okay) if you don't already have it.
+        - Create the analysis environment used for the analysis in the paper
+          ```shell
+          conda env create -f environment.yml
+          ```
+        - Activate the environment:
+          ```shell
+          conda activate mmw-cavity-paper-analysis
+          ```
+- Clone and install the `suprtools` repository inside whatever environment you chose.
+  This repository contains general analysis code.
+- Decompress `data.zip` (the raw data) from Zenodo [10.5281/zenodo.16907261]
+  into a `data` directory at the same level as this README.
+- Run the entire notebook entitled `analysis.ipynb`. This should take 5 to 10 minutes.
     - If you have no local LaTeX installation, change the following line in the notebook before runnning
       so that matplotlib does not try to use LaTeX for rendering figure text:
         ```python
@@ -28,7 +47,8 @@ In a Python environment of your choice:
 - `img`: images used in the notebook
 - `intermediate-data`: fit results that (used to) take some time to generate.
     - Presently these are in the form of `.csv` files that are already provided.
-    - The `.csv` files may be regenerated from raw data extracted as described above by running the entireties of the three analysis notebooks:
+    - The `.csv` files may be regenerated from raw data in the `data` directory
+      by running the entireties of the three analysis notebooks:
         - `caecilia-renalaysis.ipynb` (fast)
         - `cassia-reanalysis.ipynb` (>5 min)
         - `flaminia-reanalysis.ipynb` (>5 min)
