@@ -22,7 +22,8 @@ Maintenance only.
     2. Create your own environment
     3. For maximum reproducibility.
         - Install `conda` (miniconda is okay) if you don't already have it.
-        - Create an analysis environment closely approximating the one used for the analysis in the paper (see below for departures)
+        - Create an analysis environment closely approximating the one used for
+          the analysis in the paper (see below for departures)
           ```shell
           conda env create -f environment.yml
           ```
@@ -32,14 +33,33 @@ Maintenance only.
           ```
 - Clone and install the `suprtools` repository inside whatever environment you chose.
   This repository contains general analysis code.
-- Decompress `data.zip` (the raw data) from Zenodo [10.5281/zenodo.16907261]
-  into a `data` directory at the same level as this README.
-- Run the entire notebook entitled `analysis.ipynb`. This can take up to 10 minutes.
-    - If you have no local LaTeX installation, change the following line in the notebook before runnning
-      so that matplotlib does not try to use LaTeX for rendering figure text:
+- Download the files from Zenodo [[10.5281/zenodo.16907261](https://doi.org/10.5281/zenodo.16907261)]
+  into a `data` directory at the same level as this README, and extract the `.zip` archive,
+  producing a second data directory:
+  ```
+  mmw-cavity-paper-analysis/
+  |-- analysis.ipynb
+  |-- data/
+  |    |-- README.md
+  |    |-- data.zip
+  |    +-- data/
+  |         +-- ...
+  |-- img/
+  |    +-- ...
+  |-- intermediate-data/
+  |    +-- ...
+  |-- paper_figures/
+  |    +-- ...
+  +-- README.md
+  ```
+- Now we can actually get to running the notebook.
+    - If you have no local LaTeX installation, make the following modification
+      in `analysis.ipynb` before runnning so that matplotlib does not try
+      to use LaTeX for rendering figure text:
         ```python
         setup_paper_style(usetex=False)  # previously, usetex=True
         ```
+    - Now run`analysis.ipynb`. This can take up to 10 minutes.
 
 ## Contents
 
@@ -52,6 +72,8 @@ Maintenance only.
         - `caecilia-renalaysis.ipynb` (fast)
         - `cassia-reanalysis.ipynb` (>5 min)
         - `flaminia-reanalysis.ipynb` (>5 min)
+    - The resulting `.csv` files may not be identical to those provided here,
+      but will be numerically quite close.
 - `paper_figures`: additional code that is imported in the main notebook (`analysis.ipynb`)
 - `README.md`: this README
 
