@@ -22,7 +22,7 @@ Maintenance only.
     2. Create your own environment
     3. For maximum reproducibility.
         - Install `conda` (miniconda is okay) if you don't already have it.
-        - Create the analysis environment used for the analysis in the paper
+        - Create an analysis environment closely approximating the one used for the analysis in the paper (see below for departures)
           ```shell
           conda env create -f environment.yml
           ```
@@ -54,3 +54,14 @@ Maintenance only.
         - `flaminia-reanalysis.ipynb` (>5 min)
 - `paper_figures`: additional code that is imported in the main notebook (`analysis.ipynb`)
 - `README.md`: this README
+
+## Environment file
+
+The environment file was exported as
+```python
+conda env export -f environment.yaml --no-builds --format=environment-yaml
+```
+with environment variables and irrelevant pip packages removed,
+and with the following bumps:
+- scikit-rf: 1.4.0 to 1.5.0 (in case of numpy install issues requiring numpy 2; resolves [this issue](https://github.com/scikit-rf/scikit-rf/issues/1199))
+- libgfortran5: 13.2.0 to >=14.0.0 (to prevent [numpy install issues](https://github.com/conda-forge/numpy-feedstock/issues/347#issuecomment-2772248255))

@@ -158,7 +158,8 @@ dependencies:
   - libffi=3.4.2
   - libgd=2.3.3
   - libgfortran=5.0.0
-  - libgfortran5=13.2.0
+  # to prevent numpy install issues (https://github.com/conda-forge/numpy-feedstock/issues/347#issuecomment-2772248255)
+  - libgfortran5>=14.0.0
   - libglib=2.82.2
   - libgrpc=1.60.1
   - libhwy=1.1.0
@@ -293,7 +294,7 @@ dependencies:
   - rsa=4.9
   - scholarly=1.7.11
   - scikit-image=0.24.0
-  - scikit-rf=1.4.0
+  - scikit-rf=1.5.0
   - scipy=1.14.1
   - seaborn=0.13.0
   - seaborn-base=0.13.0
