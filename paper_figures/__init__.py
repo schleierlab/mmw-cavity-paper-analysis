@@ -901,7 +901,7 @@ def single_ringdown_inset(inset_ax, ringdown_collective_fit, data_kw: PlotKwargs
 def fit_fig4_model(cav, highest_fins_array):
     params = fig4a_model.make_params(
         limit_finesse=dict(value=6e+7, min=10, max=1e+9),
-        fudge_factor=dict(value=2, min=1, max=10),
+        fudge_factor=dict(value=1.3, min=1, max=3),
     )
 
     freq = highest_fins_array['freq']
