@@ -31,7 +31,7 @@ Maintenance only.
           ```shell
           conda activate mmw-cavity-paper-analysis
           ```
-- Clone and install the `suprtools` repository inside whatever environment you chose.
+- Clone and install the [suprtools repository, v0.1.0](https://doi.org/10.5281/zenodo.16923078) inside whatever environment you chose.
   This repository contains general analysis code.
 - Download the files from Zenodo [[10.5281/zenodo.16907261](https://doi.org/10.5281/zenodo.16907261)]
   into a `data` directory at the same level as this README, and extract the `.zip` archive,
