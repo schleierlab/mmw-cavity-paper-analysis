@@ -34,7 +34,7 @@ Maintenance only.
   This repository contains general analysis code.
 - Decompress `data.zip` (the raw data) from Zenodo [10.5281/zenodo.16907261]
   into a `data` directory at the same level as this README.
-- Run the entire notebook entitled `analysis.ipynb`. This should take 5 to 10 minutes.
+- Run the entire notebook entitled `analysis.ipynb`. This can take up to 10 minutes.
     - If you have no local LaTeX installation, change the following line in the notebook before runnning
       so that matplotlib does not try to use LaTeX for rendering figure text:
         ```python
@@ -63,5 +63,6 @@ conda env export -f environment.yaml --no-builds --format=environment-yaml
 ```
 with environment variables and irrelevant pip packages removed,
 and with the following bumps:
-- scikit-rf: 1.4.0 to 1.5.0 (in case of numpy install issues requiring numpy 2; resolves [this issue](https://github.com/scikit-rf/scikit-rf/issues/1199))
+- scikit-rf: 1.4.0 to 1.5.0 (in case of numpy install issues requiring numpy 2,
+  this version bump prevents [this issue](https://github.com/scikit-rf/scikit-rf/issues/1199))
 - libgfortran5: 13.2.0 to >=14.0.0 (to prevent [numpy install issues](https://github.com/conda-forge/numpy-feedstock/issues/347#issuecomment-2772248255))
